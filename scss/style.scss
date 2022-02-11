@@ -1,0 +1,422 @@
+@import "fuentes";
+@import "variables";
+@import "tools";
+
+body{
+	@include font_family_roboto()
+	font-weight: map-get($miMap, light);
+}
+
+.font-weight-bold{
+	font-weight: map-get($miMap, bold);
+}
+
+.font-weight-light{
+	font-weight: map-get($miMap, light);
+}
+
+.font-weight-medium{
+	font-weight: map-get($miMap, medium);
+}
+
+.comienzo{
+	margin-top: 116px !important;
+}
+
+.bg-color{
+	background-color: #aac1d59e;
+}
+
+.bg-scrolling{
+	background-color: #9bb0c191;
+}
+
+.color-pink{
+	color: pink;
+}
+
+.ws-flotante{
+	position: fixed;
+	right:20px;
+	bottom:80px;
+	z-index:100;
+	right: 30px;
+
+	img{
+	width: 55px;
+	height:55px;
+	}
+}
+
+.navbar-brand{
+
+	img{
+		height: 90px;
+		width: 90px;
+
+		&:hover{
+			transform: scale(1.7)
+		}
+	}
+}
+
+.navbar-nav{
+	.nav-item{
+		a{
+			color: $color-navbar-letras;
+			@include font_family_roboto()
+			font-size: 1.2rem;
+
+			&:hover{
+				color: $color-navbar-letras-hover !important;
+			}
+		}
+	}
+}
+
+@keyframes letrero-index{
+	0%{
+		color: white;
+	}
+
+	100%{
+		color: grey;
+	}
+}
+
+.banner-index{
+	background-image: url('../assets/banner.jpg');
+	background-size: cover;
+	height: 600px;
+
+	@media all and (max-width: $point-md){
+		background-image: url('../assets/banner.jpg');
+		background-size: cover;
+		object-fit: contain;
+	}
+
+	.letrero-banner{
+		color: $color-letro-banner-index;
+		@include font_family_bebas()
+		font-size: 4rem;
+		margin-top: 230px;
+		animation-name: letrero-index;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+		animation-duration: 1s;
+		animation-delay: 0.01s;
+
+		@media all and (max-width: $point-md){
+			font-size: 2.2rem;
+		}
+	}
+
+	.boton-comprar{
+		color: $color-boton-comprar-index;
+		@include font_family_bebas()
+		font-size: 2rem;
+		margin-top: 150px;
+
+		&:hover{
+			background-color: $boton-comprar-index;
+			color: black;
+		}
+
+		@media all and (max-width: $point-md){
+			margin-top: 250px;
+		}
+	}
+}
+
+@keyframes letrero-animado{
+	0%{
+		color:#c786cc ;
+	}
+
+	100%{
+		color: magenta;
+	}
+}
+
+// .letrero-descuento{
+// 	@extend .color-pink;
+// 	@include font_family_bebas()
+// 	background-color: $bg-letrero-descuento;
+// 	font-size: 2rem;
+// 	animation-name: letrero-animado;
+// 	animation-iteration-count: infinite;
+// 	animation-timing-function: ease-in-out;
+// 	animation-duration: 1s;
+// 	animation-delay: 0.01s;
+// 	@media all and (max-width: $point-md){
+// 			font-size: 1.5rem;
+// 		}
+// }
+
+
+.letrero-descuento{
+	color: black;
+	@include font_family_bebas()
+	
+	font-size: 2rem;
+
+	@media all and (max-width: $point-md){
+			font-size: 1.5rem;
+		}
+}
+
+.letrero-codigo{
+	@extend .color-pink;
+	@include font_family_bebas()
+	font-size: 2rem;
+	background-color: orange;
+}
+
+.imagenes-index{
+	max-width: 400px !important;
+	height: 300px;
+}
+
+.carousel-img{
+	img{
+		height: 500px;
+		object-fit: contain;
+	}
+}
+
+.descripcion-shop{
+	color: $color-shop-letras;
+	@include font_family_roboto()
+	background-color: $bg-titulos-shop;
+	font-size: 2rem;
+	max-width: 280px;
+	border: 2px solid #0000002b;
+}
+
+.letras-productos{
+	color: $color-shop-letras;
+	@include font_family_roboto()
+	font-size: 3rem;
+}
+
+.letra-descripcion-productos{
+
+}
+
+.letras-modal{
+	@include font_family_roboto()
+	color: black;
+}
+
+.nav-link{
+	&:hover{
+		color: white !important;
+	}
+}
+
+.imagenes-shop{
+	transition: all 250ms ease-in-out;
+	height: 180px;
+	width: 150px;
+	border: 2px solid #0000002b;
+	margin-top: 20px;
+	
+	&:hover{
+		transform: scale(1.5);
+		box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+	}
+}
+
+.fondo{
+	// background-image: url('../assets/logo.jpg');
+	// background-position: center;
+	// background-repeat: repeat;
+	background-color: #8080803b;
+
+	.letrero-historia{
+		color: $color-letrero-historia;
+		font-size: 3rem;
+		@include font_family_bebas()
+		animation-name: letrero-animado;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+		animation-duration: 1s;
+		animation-delay: 0.01s;
+
+		@media all and (max-width: $point-md){
+			font-size: 1.7rem;
+		}
+
+	}
+
+	.texto-historia{
+		color: $color-historia-letras;
+		@include font_family_montserrat()
+		font-size: 1.2rem;
+	}
+
+	.subtitulos-blog{
+		@include font_family_bebas()
+		font-size: 1.2rem;
+		background-color: $bg-titulo-blog;
+		max-width: 400px;
+		border: 2px solid #0000002b;
+	}
+	
+	.tituloFormulario{
+		@include font_family_roboto()
+		font-size: 2rem;
+		max-width: 600px;
+		background-color: $bg-formulario;
+		border: 2px solid #0000002b;
+
+		@media all and (max-width: $point-md){
+			font-size: 1.3rem;
+			max-width: 280px;
+		}
+	}
+
+	.formulario{
+		max-width: 600px;
+		background-color: $bg-formulario;
+	}
+
+	.boton-enviar{
+		color: $color-boton-comprar-index;
+		@include font_family_bebas()
+		font-size: 1.2rem;
+		background-color: $botones;
+		margin-bottom: 20px;
+		border: 2px solid #68616140;
+
+		&:hover{
+			background-color: black;
+			color: white;
+		}
+	}
+
+	.letras-precio-shop{
+		font-size: 0.8rem;
+		@include font_family_montserrat()
+	}
+}
+
+.boton-compra{
+		color: $color-boton-comprar-index;
+		@include font_family_bebas()
+		font-size: 2.5rem;
+		background-color: $botones;
+		margin-bottom: 20px;
+		height: 70px;
+		border: 2px solid #68616140;
+		margin-top: 150px;
+
+		a{
+			text-decoration: none;
+			color: $color-boton-comprar-index;
+		}
+}
+
+.boton-compra2{
+		color: $color-boton-comprar-index;
+		@include font_family_bebas()
+		font-size: 1rem;
+		background-color: $botones;
+		margin-bottom: 20px;
+		height: 37px;
+		border: 2px solid #68616140;
+
+		a{
+			text-decoration: none;
+			color: $color-boton-comprar-index;
+		}
+}
+
+.imagenAbout{
+	img{
+		height: 310px;
+
+		@media all and (max-width: $point-md){
+			height: 180px;
+		}
+	}
+}
+
+.imagen-principal-blog{
+	img{
+		max-width: 450px;
+	}
+}
+
+.descripcion{
+		@include font_family_montserrat()
+		font-size: 1.2rem;
+		max-width: 800px;
+		@media all and (max-width: $point-md){
+			font-size: 1rem;
+		}
+}
+
+.letrero-blog{
+	color: #c786cc;
+	@include font_family_bebas()
+	font-size: 4rem;
+	background-color: #ffa5008f;
+}
+
+.imagenes-blog{
+	max-width: 400px;
+}
+
+.blog-img{
+		width: 100%;
+		height: 100%;
+		transition: all 250ms ease-in-out;
+
+		&:hover{
+			transform: scale(1.2);
+			box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+		}
+}
+
+.titulo-blog{
+	@include font_family_bebas()
+	font-size: 2rem;
+	background-color: $bg-titulo-blog;
+	max-width: 500px;
+	border: 2px solid #0000002b;
+
+	@media all and (max-width: $point-md){
+			font-size: 1.5rem;
+	}
+}
+
+.letras-blog{
+	color: $color-blog-letras;
+	@include font_family_bebas()
+	font-size: 2rem;
+}
+
+.mapa{
+	iframe{
+		height: 150px;
+		max-width: 600px;
+	}
+}
+
+#footer{
+	background-color: $bg-footer;
+
+	p{
+		@include font_family_roboto()
+		font-size: 1rem;
+		color: $color-footer-letras;
+	}
+
+	.nav{
+		img{
+			width: 30px;
+			height: 30px;
+		}
+	}
+}

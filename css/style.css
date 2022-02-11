@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dongle:wght@300;400;700&family=Montserrat:wght@400;600;800&family=Roboto:ital,wght@0,100;0,700;1,400&display=swap");
+/* line 5, ../../fa suministros/scss/style.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }
+
+/* line 10, ../../fa suministros/scss/style.scss */
+.font-weight-bold {
+  font-weight: 700; }
+
+/* line 14, ../../fa suministros/scss/style.scss */
+.font-weight-light {
+  font-weight: 300; }
+
+/* line 18, ../../fa suministros/scss/style.scss */
+.font-weight-medium {
+  font-weight: 400; }
+
+/* line 22, ../../fa suministros/scss/style.scss */
+.comienzo {
+  margin-top: 116px !important; }
+
+/* line 26, ../../fa suministros/scss/style.scss */
+.bg-color {
+  background-color: #aac1d59e; }
+
+/* line 30, ../../fa suministros/scss/style.scss */
+.bg-scrolling {
+  background-color: #9bb0c191; }
+
+/* line 34, ../../fa suministros/scss/style.scss */
+.color-pink, .letrero-codigo {
+  color: pink; }
+
+/* line 38, ../../fa suministros/scss/style.scss */
+.ws-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  z-index: 100;
+  right: 30px; }
+  /* line 45, ../../fa suministros/scss/style.scss */
+  .ws-flotante img {
+    width: 55px;
+    height: 55px; }
+
+/* line 53, ../../fa suministros/scss/style.scss */
+.navbar-brand img {
+  height: 90px;
+  width: 90px; }
+  /* line 57, ../../fa suministros/scss/style.scss */
+  .navbar-brand img:hover {
+    transform: scale(1.7); }
+
+/* line 65, ../../fa suministros/scss/style.scss */
+.navbar-nav .nav-item a {
+  color: #000000b0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem; }
+  /* line 70, ../../fa suministros/scss/style.scss */
+  .navbar-nav .nav-item a:hover {
+    color: #66a8c1 !important; }
+
+@keyframes letrero-index {
+  0% {
+    color: white; }
+  100% {
+    color: grey; } }
+
+/* line 87, ../../fa suministros/scss/style.scss */
+.banner-index {
+  background-image: url("../assets/banner.jpg");
+  background-size: cover;
+  height: 600px; }
+  @media all and (max-width: 768px) {
+    /* line 87, ../../fa suministros/scss/style.scss */
+    .banner-index {
+      background-image: url("../assets/banner.jpg");
+      background-size: cover;
+      object-fit: contain; } }
+  /* line 98, ../../fa suministros/scss/style.scss */
+  .banner-index .letrero-banner {
+    color: #c786cca1;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    margin-top: 230px;
+    animation-name: letrero-index;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 0.01s; }
+    @media all and (max-width: 768px) {
+      /* line 98, ../../fa suministros/scss/style.scss */
+      .banner-index .letrero-banner {
+        font-size: 2.2rem; } }
+  /* line 114, ../../fa suministros/scss/style.scss */
+  .banner-index .boton-comprar {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    margin-top: 150px; }
+    /* line 120, ../../fa suministros/scss/style.scss */
+    .banner-index .boton-comprar:hover {
+      background-color: white;
+      color: black; }
+    @media all and (max-width: 768px) {
+      /* line 114, ../../fa suministros/scss/style.scss */
+      .banner-index .boton-comprar {
+        margin-top: 250px; } }
+
+@keyframes letrero-animado {
+  0% {
+    color: #c786cc; }
+  100% {
+    color: magenta; } }
+
+/* line 157, ../../fa suministros/scss/style.scss */
+.letrero-descuento {
+  color: black;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem; }
+  @media all and (max-width: 768px) {
+    /* line 157, ../../fa suministros/scss/style.scss */
+    .letrero-descuento {
+      font-size: 1.5rem; } }
+
+/* line 168, ../../fa suministros/scss/style.scss */
+.letrero-codigo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  background-color: orange; }
+
+/* line 175, ../../fa suministros/scss/style.scss */
+.imagenes-index {
+  max-width: 400px !important;
+  height: 300px; }
+
+/* line 181, ../../fa suministros/scss/style.scss */
+.carousel-img img {
+  height: 500px;
+  object-fit: contain; }
+
+/* line 187, ../../fa suministros/scss/style.scss */
+.descripcion-shop {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  background-color: #84bcca80;
+  font-size: 2rem;
+  max-width: 280px;
+  border: 2px solid #0000002b; }
+
+/* line 196, ../../fa suministros/scss/style.scss */
+.letras-productos {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem; }
+
+/* line 206, ../../fa suministros/scss/style.scss */
+.letras-modal {
+  font-family: 'Roboto', sans-serif;
+  color: black; }
+
+/* line 212, ../../fa suministros/scss/style.scss */
+.nav-link:hover {
+  color: white !important; }
+
+/* line 217, ../../fa suministros/scss/style.scss */
+.imagenes-shop {
+  transition: all 250ms ease-in-out;
+  height: 180px;
+  width: 150px;
+  border: 2px solid #0000002b;
+  margin-top: 20px; }
+  /* line 224, ../../fa suministros/scss/style.scss */
+  .imagenes-shop:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); }
+
+/* line 230, ../../fa suministros/scss/style.scss */
+.fondo {
+  background-color: #8080803b; }
+  /* line 236, ../../fa suministros/scss/style.scss */
+  .fondo .letrero-historia {
+    color: #c786cc;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
+    animation-name: letrero-animado;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 0.01s; }
+    @media all and (max-width: 768px) {
+      /* line 236, ../../fa suministros/scss/style.scss */
+      .fondo .letrero-historia {
+        font-size: 1.7rem; } }
+  /* line 252, ../../fa suministros/scss/style.scss */
+  .fondo .texto-historia {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem; }
+  /* line 258, ../../fa suministros/scss/style.scss */
+  .fondo .subtitulos-blog {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    background-color: #f2bd5ca3;
+    max-width: 400px;
+    border: 2px solid #0000002b; }
+  /* line 266, ../../fa suministros/scss/style.scss */
+  .fondo .tituloFormulario {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    max-width: 600px;
+    background-color: #b8c4c870;
+    border: 2px solid #0000002b; }
+    @media all and (max-width: 768px) {
+      /* line 266, ../../fa suministros/scss/style.scss */
+      .fondo .tituloFormulario {
+        font-size: 1.3rem;
+        max-width: 280px; } }
+  /* line 279, ../../fa suministros/scss/style.scss */
+  .fondo .formulario {
+    max-width: 600px;
+    background-color: #b8c4c870; }
+  /* line 284, ../../fa suministros/scss/style.scss */
+  .fondo .boton-enviar {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    background-color: #84bcca80;
+    margin-bottom: 20px;
+    border: 2px solid #68616140; }
+    /* line 292, ../../fa suministros/scss/style.scss */
+    .fondo .boton-enviar:hover {
+      background-color: black;
+      color: white; }
+  /* line 298, ../../fa suministros/scss/style.scss */
+  .fondo .letras-precio-shop {
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif; }
+
+/* line 304, ../../fa suministros/scss/style.scss */
+.boton-compra {
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  background-color: #84bcca80;
+  margin-bottom: 20px;
+  height: 70px;
+  border: 2px solid #68616140;
+  margin-top: 150px; }
+  /* line 314, ../../fa suministros/scss/style.scss */
+  .boton-compra a {
+    text-decoration: none;
+    color: white; }
+
+/* line 320, ../../fa suministros/scss/style.scss */
+.boton-compra2 {
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  background-color: #84bcca80;
+  margin-bottom: 20px;
+  height: 37px;
+  border: 2px solid #68616140; }
+  /* line 329, ../../fa suministros/scss/style.scss */
+  .boton-compra2 a {
+    text-decoration: none;
+    color: white; }
+
+/* line 336, ../../fa suministros/scss/style.scss */
+.imagenAbout img {
+  height: 310px; }
+  @media all and (max-width: 768px) {
+    /* line 336, ../../fa suministros/scss/style.scss */
+    .imagenAbout img {
+      height: 180px; } }
+
+/* line 346, ../../fa suministros/scss/style.scss */
+.imagen-principal-blog img {
+  max-width: 450px; }
+
+/* line 351, ../../fa suministros/scss/style.scss */
+.descripcion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  max-width: 800px; }
+  @media all and (max-width: 768px) {
+    /* line 351, ../../fa suministros/scss/style.scss */
+    .descripcion {
+      font-size: 1rem; } }
+
+/* line 360, ../../fa suministros/scss/style.scss */
+.letrero-blog {
+  color: #c786cc;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4rem;
+  background-color: #ffa5008f; }
+
+/* line 367, ../../fa suministros/scss/style.scss */
+.imagenes-blog {
+  max-width: 400px; }
+
+/* line 371, ../../fa suministros/scss/style.scss */
+.blog-img {
+  width: 100%;
+  height: 100%;
+  transition: all 250ms ease-in-out; }
+  /* line 376, ../../fa suministros/scss/style.scss */
+  .blog-img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); }
+
+/* line 382, ../../fa suministros/scss/style.scss */
+.titulo-blog {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  background-color: #f2bd5ca3;
+  max-width: 500px;
+  border: 2px solid #0000002b; }
+  @media all and (max-width: 768px) {
+    /* line 382, ../../fa suministros/scss/style.scss */
+    .titulo-blog {
+      font-size: 1.5rem; } }
+
+/* line 394, ../../fa suministros/scss/style.scss */
+.letras-blog {
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem; }
+
+/* line 401, ../../fa suministros/scss/style.scss */
+.mapa iframe {
+  height: 150px;
+  max-width: 600px; }
+
+/* line 407, ../../fa suministros/scss/style.scss */
+#footer {
+  background-color: #aac1d5; }
+  /* line 410, ../../fa suministros/scss/style.scss */
+  #footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: white; }
+  /* line 417, ../../fa suministros/scss/style.scss */
+  #footer .nav img {
+    width: 30px;
+    height: 30px; }
+
+/*# sourceMappingURL=style.css.map */
