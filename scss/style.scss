@@ -177,8 +177,16 @@ body{
 }
 
 .imagenes-index{
-	max-width: 400px !important;
 	height: 300px;
+	border: 2px solid #0000002b;
+	border-radius: 20px;
+	transition: all 250ms ease-in-out;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+
+	&:hover{
+		transform: scale(1.1);
+		box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+	}
 }
 
 .carousel-img{
