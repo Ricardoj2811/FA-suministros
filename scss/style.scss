@@ -20,7 +20,7 @@ body{
 }
 
 .comienzo{
-	margin-top: 116px !important;
+	margin-top: 125px !important;
 }
 
 .bg-color{
@@ -138,22 +138,6 @@ body{
 	}
 }
 
-// .letrero-descuento{
-// 	@extend .color-pink;
-// 	@include font_family_bebas()
-// 	background-color: $bg-letrero-descuento;
-// 	font-size: 2rem;
-// 	animation-name: letrero-animado;
-// 	animation-iteration-count: infinite;
-// 	animation-timing-function: ease-in-out;
-// 	animation-duration: 1s;
-// 	animation-delay: 0.01s;
-// 	@media all and (max-width: $point-md){
-// 			font-size: 1.5rem;
-// 		}
-// }
-
-
 .letrero-descuento{
 	color: black;
 	@include font_family_bebas()
@@ -186,6 +170,37 @@ body{
 	&:hover{
 		transform: scale(1.1);
 		box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+	}
+}
+
+.instrucciones{
+	p{
+		@include font_family_bebas()
+		font-size: 4rem;
+
+		@media all and (max-width: $point-md){
+			font-size: 2rem;
+		}
+	}
+
+	ol{
+		li{
+			@include font_family_bebas()
+			font-size: 1.5rem;
+
+			@media all and (max-width: $point-md){
+				font-size: 1rem;
+			}
+		}
+	}
+
+	h2{
+		@include font_family_bebas()
+		font-size: 2rem;
+
+		@media all and (max-width: $point-md){
+			font-size: 1.2rem;
+		}
 	}
 }
 
@@ -245,13 +260,33 @@ body{
 		transform: scale(1.5);
 		box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
 	}
+
+	@media all and (max-width: $point-sm){
+			width: 250px;
+			height: 300px;
+		}
 }
 
+.tituloShop{
+		@include font_family_roboto()
+		font-size: 2rem;
+		background-color: $bg-formulario;
+		border: 2px solid #0000002b;
+		max-width: 300px;
+
+		@media all and (max-width: $point-md){
+			font-size: 1.5rem;
+			max-width: 200px;
+		}
+
+		@media all and (max-width: $point-sm){
+			font-size: 1.1rem;
+			max-width: 150px;
+		}
+	}
+
 .fondo{
-	// background-image: url('../assets/logo.jpg');
-	// background-position: center;
-	// background-repeat: repeat;
-	background-color: #8080803b;
+	background-color: none;
 
 	.letrero-historia{
 		color: $color-letrero-historia;
@@ -299,6 +334,7 @@ body{
 	.formulario{
 		max-width: 600px;
 		background-color: $bg-formulario;
+		border: 2px solid #0000002b;
 	}
 
 	.boton-enviar{
@@ -474,8 +510,8 @@ body{
 
 	.nav{
 		img{
-			width: 30px;
-			height: 30px;
+			width: 40px;
+			height: 40px;
 		}
 	}
 }
