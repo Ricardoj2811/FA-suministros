@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,49 +11,98 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
 	<!--Header del sitio-->
 	<header class="container-fluid mx-0">
 		<div class="container-xl mx-0">
 			<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-			 	<div class="container-fluid my-0 p-0 mx-3">
-			   		<a class="navbar-brand ms-2 mt-0" href="index.html"><img src="./assets/logo.png" alt="Logo"></a>
-			   		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			  		<span class="navbar-toggler-icon"></span>
-			   		</button>
-				    <div class="collapse navbar-collapse" id="navbarNav">
-				    	<div class="mx-auto"></div>
-				      <ul class="navbar-nav">
-				        <li class="nav-item">
-				          <a class="nav-link active font-weight-bold" aria-current="page" href="index.html">Home</a>
-				        </li>
-				        <li class="nav-item">
-				          <a class="nav-link font-weight-bold" href="./shop.html">Productos</a>
-				        </li>
-				        <li class="nav-item">
-				          <a class="nav-link font-weight-bold" href="./contacto.html">Contacto</a>
-				        </li>
-				      </ul>
-				    </div>
-			  	</div>
+				<div class="container-fluid my-0 p-0 mx-3">
+					<a class="navbar-brand ms-2 mt-0" href="index.html"><img src="./assets/logo.png" alt="Logo"></a>
+					<div class="d-flex justify-content-end">
+						<form class="d-flex mx-2">
+							<button class="btn btn-outline-dark btn-carrito" type="button" onclick="verCarrito()"
+								data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="./">
+								<img class="me-2" width="20px" height="20px" src="./assets/carritoCompras.png"
+									alt="Logo">
+								<span class="badge bg-dark text-white ms-1 rounded-pill" id="cantidadCarrito">0</span>
+							</button>
+						</form>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse me-0" id="navbarNav">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a class="nav-link active font-weight-bold" aria-current="page"
+										href="index.html">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-bold" href="./shop.html">Productos</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link font-weight-bold" href="./contacto.html">Contacto</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</nav>
 		</div>
 	</header>
 	<!--Fin del Header-->
-
+	<!-- Modal Del Boton Carrito-->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">CARRITO DE COMPRAS</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Imagen</th>
+								<th scope="col">Nombre</th>
+								<th scope="col">Cantidad</th>
+								<th scope="col">Precio Unitario</th>
+								<th scope="col">Eliminar</th>
+							</tr>
+						</thead>
+						<tbody id="cuerpoModal">
+						</tbody>
+					</table>
+					<div id="totalDeCompra">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" onclick="vaciarCarrito()" class="btn btn-secondary"
+						data-bs-dismiss="modal">VACIAR</button>
+					<button type="button" class="btn btn-primary"><a class="nav-link2"
+							href="https://wa.link/n16yp2" target="_blank">COMPRAR</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<section class="container-fluid d-flex px-0">
 		<div class="banner-index col-12 aligns-items-center">
 			<h1 class="letrero-banner text-center font-weight-light">FA SUMINISTROS INDUSTRIALES</h1>
-			<p class="text-center font-weight-light"><a class="btn btn-outline-secondary boton-comprar" href="shop.html">COMPRAR</a></p>
+			<p class="text-center font-weight-light"><a class="btn btn-outline-secondary boton-comprar"
+					href="shop.html">COMPRAR</a></p>
 		</div>
 	</section>
 
 	<section class="container-xl my-5 px-0 row text-center mx-auto">
 		<div class="letrero-descuento font-weight-light text-center col-xl-4 col-4">
-			Nuevos Productos 
+			Nuevos Productos
 		</div>
 		<div class="linea col-xl-4 text-center col-4">
 			<hr>
@@ -65,73 +115,89 @@
 	</section>
 
 	<section class="container-xl my-5 px-0 row text-center mx-auto">
-		
+
 		<div class="text-center col-xl-3 col-sm-12">
-			<a class="nav-link" href="./productos/bomba-agua-12hp.html" target="_blank"><img src="assets/bombaAgua12HP.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
+			<a class="nav-link" href="./productos/bomba-agua-12hp.html" target="_blank"><img
+					src="assets/bombaAgua12HP.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
 		</div>
 
 		<div class="text-center col-xl-3 col-sm-12">
-			<a class="nav-link" href="./productos/termostato-w1315.html" target="_blank"><img src="assets/w1315-12v-controlador-temperatura.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
+			<a class="nav-link" href="./productos/termostato-w1315.html" target="_blank"><img
+					src="assets/w1315-12v-controlador-temperatura.jpg" class="imagenes-index w-100"
+					alt="bomba de 12 HP"></a>
 		</div>
 
 		<div class="text-center col-xl-3 col-sm-12">
-			<a class="nav-link" href="./productos/pinza-amperimetrica.html" target="_blank"><img src="assets/dt3266Fnuevo.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
+			<a class="nav-link" href="./productos/pinza-amperimetrica.html" target="_blank"><img
+					src="assets/dt3266Fnuevo.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
 		</div>
 
 		<div class="text-center col-xl-3 col-sm-12">
-			<a class="nav-link" href="./productos/termostato-w3230.html" target="_blank"><img src="assets/w3230-controlador-12v3.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
-		</div>	
+			<a class="nav-link" href="./productos/termostato-w3230.html" target="_blank"><img
+					src="assets/w3230-controlador-12v3.jpg" class="imagenes-index w-100" alt="bomba de 12 HP"></a>
+		</div>
 	</section>
 	<div class="linea col-xl-12">
-			<hr>
+		<hr>
 	</div>
 	<div class="container-lg text-center instrucciones">
-			<p class="font-weight-bold">¿COMO COMPRAR?</p>
-			<ol>
-				<li class="font-weight-light">
-					Elige el producto que te interesa y anota el codigo del mismo
-				</li>
-				<li class="font-weight-light">
-					Escribenos por <a href="https://wa.link/n16yp2" target="_blank">WhatsApp</a> con la siguiente informacion: <br>
-					-Codigo y cantidad del producto.<br>
-					-Comprobante de pago.<br>
-					-Metodo de retiro (Envio o Retiro personal)<br>
-					-Nombre completo<br>
-					-Direcion de entrega (En caso de necesitar envio)
-				</li>
-				<li class="font-weight-light">
-					Alli te pasaremos nuestros datos bancarios, y en caso de que este todo en orden concretaremos la compra.
-				</li>
-			</ol>
-			<h2 class="font-weight-light">Tambien puedes comprar a traves de nuestro <a href="https://listado.mercadolibre.com.ve/_CustId_65519078?item_id=MLV559965071&category_id=MLV431209&seller_id=65519078&client=recoview-selleritems&recos_listing=true" target="_blank">MercadoLibre</a>, donde somos MercaloLíder Platinium con mas de 13 años en el mercado.</h2>
+		<p class="font-weight-bold">¿COMO COMPRAR?</p>
+		<ol>
+			<li class="font-weight-light">
+				Elige el producto que te interesa y anota el codigo del mismo
+			</li>
+			<li class="font-weight-light">
+				Escribenos por <a href="https://wa.link/n16yp2" target="_blank">WhatsApp</a> con la siguiente
+				informacion: <br>
+				-Codigo y cantidad del producto.<br>
+				-Comprobante de pago.<br>
+				-Metodo de retiro (Envio o Retiro personal)<br>
+				-Nombre completo<br>
+				-Direcion de entrega (En caso de necesitar envio)
+			</li>
+			<li class="font-weight-light">
+				Alli te pasaremos nuestros datos bancarios, y en caso de que este todo en orden concretaremos la compra.
+			</li>
+		</ol>
+		<h2 class="font-weight-light">Tambien puedes comprar a traves de nuestro <a
+				href="https://listado.mercadolibre.com.ve/_CustId_65519078?item_id=MLV559965071&category_id=MLV431209&seller_id=65519078&client=recoview-selleritems&recos_listing=true"
+				target="_blank">MercadoLibre</a>, donde somos MercaloLíder Platinium con mas de 13 años en el mercado.
+		</h2>
 	</div>
 
 	<div class="ws-flotante me-0">
-		<a class="nav-link" href="https://wa.link/n16yp2" target="_blank"><img src="assets/ws-sticky.png" alt="whatsapp"></a>
+		<a class="nav-link" href="https://wa.link/n16yp2" target="_blank"><img src="assets/ws-sticky.png"
+				alt="whatsapp"></a>
 	</div>
 	<!--Inicio del Footer-->
 	<footer class="container-fluid" id="footer">
 		<p class="font-weight-light text-center mb-0">Carabobo, Venezuela</p>
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-			   <a class="nav-link" href="https://listado.mercadolibre.com.ve/_CustId_65519078?item_id=MLV559965071&category_id=MLV431209&seller_id=65519078&client=recoview-selleritems&recos_listing=true" target="_blank"><img src="assets/mercadoLibre.png" alt="Mercado Libre"></a>
+				<a class="nav-link"
+					href="https://listado.mercadolibre.com.ve/_CustId_65519078?item_id=MLV559965071&category_id=MLV431209&seller_id=65519078&client=recoview-selleritems&recos_listing=true"
+					target="_blank"><img src="assets/mercadoLibre.png" alt="Mercado Libre"></a>
 			</li>
 			<li class="nav-item">
-			   <a class="nav-link" href="https://wa.link/n16yp2" target="_blank"><img src="assets/ws.png" alt="whatsapp"></a>
+				<a class="nav-link" href="https://wa.link/n16yp2" target="_blank"><img src="assets/ws.png"
+						alt="whatsapp"></a>
 			</li>
-		</ul>	
+		</ul>
 	</footer>
 	<!--Fin del Footer-->
- 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
- 	<script type="text/javascript">
-      var nav = document.querySelector('nav');
-      window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 100) {
-          nav.classList.add('bg-scrolling', 'shadow');
-        } else {
-          nav.classList.remove('bg-scrolling', 'shadow');
-        }
-      });
-    </script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		var nav = document.querySelector('nav');
+		window.addEventListener('scroll', function () {
+			if (window.pageYOffset > 100) {
+				nav.classList.add('bg-scrolling', 'shadow');
+			} else {
+				nav.classList.remove('bg-scrolling', 'shadow');
+			}
+		});
+	</script>
 </body>
+
 </html>

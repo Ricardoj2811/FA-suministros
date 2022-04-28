@@ -204,6 +204,12 @@ body{
 	}
 }
 
+.nav-link2 {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+
 .carousel-img{
 	img{
 		height: 500px;
@@ -232,10 +238,6 @@ body{
 	@media all and (max-width: $point-sm){
 			font-size: 1.5rem;
 		}
-}
-
-.letra-descripcion-productos{
-
 }
 
 .letras-modal{
@@ -385,6 +387,16 @@ body{
 
 }
 
+.boton-compra-shop{
+	color: $color-boton-comprar-index;
+	@include font_family_bebas()
+	font-size: 1rem;
+	background-color: $botones;
+	margin-bottom: 20px;
+	height: 37px;
+	border: 2px solid #68616140;
+}
+
 .boton-compra2{
 		color: $color-boton-comprar-index;
 		@include font_family_bebas()
@@ -514,4 +526,9 @@ body{
 			height: 40px;
 		}
 	}
+}
+
+.carritoCompras img {
+	width: 50px;
+	height: 50px; 
 }
