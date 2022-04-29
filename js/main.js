@@ -35,7 +35,7 @@ function crearCards(productosParaLaVenta) {
     let listadoDeCards = ``;
     productosParaLaVenta.forEach((elemento) => {
         listadoDeCards += `
-        <div class="col-xl-2 col-md-4 col-sm-6 text-center">
+        <div class="col-xl-2 col-md-4 col-sm-6 text-center border border-3 rounded-3 m-1">
             <img src="./assets/${elemento.imagen}.jpg" class="img-fluid imagenes-shop mb-0 rounded-3" alt="${elemento.titulo}">
             <p id="titulo-${elemento.id}" class="font-weight-bold letras-precio-shop my-0">${elemento.titulo}</p>
             <p id="precio-${elemento.id}" class="font-weight-bold letras-precio-shop mt-0 mb-1">${elemento.precio} ARS</p>
@@ -43,9 +43,6 @@ function crearCards(productosParaLaVenta) {
             <div class="align-items-center mb-2">
                 <button type="button" onclick="agregarAlCarrito('${elemento.titulo}')" class="btn btn-dark boton-compra-shop">
                 AGREGAR AL CARRITO 
-                </button>
-                <button type="button" onclick="eliminar('${elemento.titulo}')" class="btn btn-danger boton-compra-shop">
-                    ELIMINAR
                 </button>
                 <button type="button" onclick="verMas('${elemento.id}')" class="btn btn-success boton-compra-shop">
                     Ver Más

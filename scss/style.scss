@@ -388,7 +388,7 @@ body{
 }
 
 .boton-compra-shop{
-	color: $color-boton-comprar-index;
+	color: black;
 	@include font_family_bebas()
 	font-size: 1rem;
 	background-color: $botones;
