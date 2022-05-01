@@ -359,6 +359,26 @@ body{
 	}
 }
 
+.boton-compra-producto{
+	color: #000;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.3rem;
+	background-color: #84bcca80;
+	margin-bottom: 10px;
+	height: 60px;
+	border: 2px solid #68616140; 
+
+	@media all and (max-width: $point-md){
+		font-size: 1.2rem;
+		height: 40px;
+	}
+
+	@media all and (max-width: $point-sm){
+		font-size: 1rem;
+		height: 35px;
+	}
+}
+
 .boton-compra{
 		color: $color-boton-comprar-index;
 		@include font_family_bebas()
@@ -507,8 +527,13 @@ body{
 .mapa{
 	iframe{
 		height: 150px;
-		max-width: 600px;
+		max-width: 100%;
+
+	@media all and (max-width: $point-sm){
+		width: auto;
 	}
+	}
+
 }
 
 #footer{

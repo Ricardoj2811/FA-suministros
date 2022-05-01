@@ -256,6 +256,23 @@ body {
     font-size: 0.8rem;
     font-family: 'Montserrat', sans-serif; }
 
+.boton-compra-producto {
+  color: #000;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.3rem;
+  background-color: #84bcca80;
+  margin-bottom: 10px;
+  height: 60px;
+  border: 2px solid #68616140; }
+  @media all and (max-width: 768px) {
+    .boton-compra-producto {
+      font-size: 1.2rem;
+      height: 40px; } }
+  @media all and (max-width: 576px) {
+    .boton-compra-producto {
+      font-size: 1rem;
+      height: 35px; } }
+
 .boton-compra {
   color: white;
   font-family: 'Bebas Neue', cursive;
@@ -368,7 +385,10 @@ body {
 
 .mapa iframe {
   height: 150px;
-  max-width: 600px; }
+  max-width: 100%; }
+  @media all and (max-width: 576px) {
+    .mapa iframe {
+      width: auto; } }
 
 #footer {
   background-color: #aac1d5; }

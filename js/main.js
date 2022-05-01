@@ -38,7 +38,7 @@ function crearCards(productosParaLaVenta) {
         <div class="col-xl-2 col-md-4 col-sm-6 text-center border border-3 rounded-3 m-1">
             <img src="./assets/${elemento.imagen}.jpg" class="img-fluid imagenes-shop mb-0 rounded-3" alt="${elemento.titulo}">
             <p id="titulo-${elemento.id}" class="font-weight-bold letras-precio-shop my-0">${elemento.titulo}</p>
-            <p id="precio-${elemento.id}" class="font-weight-bold letras-precio-shop mt-0 mb-1">${elemento.precio} ARS</p>
+            <p id="precio-${elemento.id}" class="font-weight-bold letras-precio-shop mt-0 mb-1">${elemento.precio} $USD</p>
             <input class="my-2" value="1" min="1" id="cantidad-${elemento.id}" type="number" placeholder="cantidad">
             <div class="align-items-center mb-2">
                 <button type="button" onclick="agregarAlCarrito('${elemento.titulo}')" class="btn btn-dark boton-compra-shop">
@@ -59,11 +59,22 @@ function buscarProducto() {
     const productosEncontrados = productos.filter((producto) => {
         return producto.titulo.toUpperCase().match(nombreProductoBuscado);
     });
+
+    const productosEncontrados2 = productos.filter((producto) => {
+        return producto.tipo.toUpperCase().match(nombreProductoBuscado);
+    });
+
     if (productosEncontrados.length === 0) {
         AgregarCards("<h1>Tu busqueda no arrojo ningun resultado :(</h1>")
+        if (productosEncontrados2.length === 0){
+            AgregarCards("<h1>Tu busqueda no arrojo ningun resultado :(</h1>")
+        } else {
+            crearCards(productosEncontrados2);
+        }
     } else {
         crearCards(productosEncontrados);
     }
+    console.log(productosEncontrados2);
 }
 
 function verMas(id) {
@@ -135,10 +146,10 @@ function eliminar(nombreProducto) {
             icon: "success",
         });
         verCarrito();
-        if(carritoDeCompras.length === 0){
+        if (carritoDeCompras.length === 0) {
             agregandoProductosAlmodal(``);
         }
-    }else{
+    } else {
         swal({
             title: "¡Error!",
             text: "El producto no se agrego al Carrito, asi que no se puede eliminar",
@@ -178,9 +189,6 @@ function vaciarCarrito() {
         });
 }
 
-let botonVaciarCarrito = document.getElementById("vaciarCarrito");
-botonVaciarCarrito.addEventListener("click", vaciarCarrito);
-
 let botonBusqueda = document.getElementById("productoBuscado");
 botonBusqueda.addEventListener("keydown", buscarProducto);
 
@@ -196,7 +204,7 @@ function verCarrito() {
             <td class ="carritoCompras"> <img src="./assets/${elemento.imagen}.jpg"</td>
             <td>${elemento.titulo}</td>
             <td>${elemento.cantidad}</td>
-            <td>${elemento.precio}</td>
+            <td>${elemento.precio} $USD</td>
             <td><button class="btn btn-outline-dark" type="button" onclick="eliminar('${elemento.titulo}')">
             <img class="my-auto mx-auto" width="20px" height="20px" src="./assets/boton-x.png" alt="Logo">
             </button></td>
@@ -206,9 +214,6 @@ function verCarrito() {
     totalCarrito();
 }
 
-let botonVerCarrito = document.getElementById("verCarrito");
-botonVerCarrito.addEventListener("click", verCarrito);
-
 function agregandoTotalAlCarrito(cards) {
     document.getElementById("totalDeCompra").innerHTML = cards;
 }
@@ -217,5 +222,5 @@ function totalCarrito() {
     total = 0;
     let totalDeCompra = calculoDeltotalCarrito();
     let totalAPagar = descuento(totalDeCompra);
-    agregandoTotalAlCarrito(`TOTAL A PAGAR = ${totalAPagar}`);
+    agregandoTotalAlCarrito(`TOTAL A PAGAR = ${totalAPagar} USD`);
 }
