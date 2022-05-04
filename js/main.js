@@ -1,37 +1,42 @@
-let productos = []
+const productos = []
+const productosTemperatura = []
+const productosPresion = []
+const productosElectricidad = []
+const productosHumedad = []
+const productosVarios = []
 let nombreProducto;
 let total = 0;
-let valor;
 
-const obtenerDatos = async () => {
-    const response = await fetch("./js/productos.JSON")
+const obtenerDatos = async (idDelHTML, archivoJSON, array) => {
+    const response = await fetch(`./js/${archivoJSON}.JSON`)
     const data = await response.json();
     data.forEach((producto) => {
-        productos.push(producto)
+        array.push(producto)
     })
-    crearCards(data);
+    crearCards(data, idDelHTML);
     localStorage.setItem("Productos", JSON.stringify(data));
     return data
 }
-setTimeout(() => {
-    obtenerDatos()
-}, 1000);
+
+obtenerDatos("listadoDeProductos", "productos", productos);
+obtenerDatos("listadoDeProductosTemperatura", "productosTemperatura", productosTemperatura);
+obtenerDatos("listadoDeProductosPresion", "productosPresion", productosPresion);
+obtenerDatos("listadoDeProductosElectricidad", "productosElectricidad", productosElectricidad);
+obtenerDatos("listadoDeProductosHumedad", "productosHumedad", productosHumedad);
+obtenerDatos("listadoDeProductosVarios", "productosVarios", productosVarios);
+
+console.log(productos)
 
 const carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
 numerosDelCarrito();
 
 let productosEnStorage = JSON.parse(localStorage.getItem("Productos"));
 
-function descuento(valor) {
-    valor > 10000 ? valor = valor * 0.85 : valor = valor;
-    return valor
+function AgregarCards(cards, id) {
+    document.getElementById(id).innerHTML = cards;
 }
 
-function AgregarCards(cards) {
-    document.getElementById("listadoDeProductos").innerHTML = cards;
-}
-
-function crearCards(productosParaLaVenta) {
+function crearCards(productosParaLaVenta, idDelHTML) {
     let listadoDeCards = ``;
     productosParaLaVenta.forEach((elemento) => {
         listadoDeCards += `
@@ -50,7 +55,7 @@ function crearCards(productosParaLaVenta) {
             </div>
         </div>`
     })
-    AgregarCards(listadoDeCards);
+    AgregarCards(listadoDeCards, idDelHTML);
 }
 
 function buscarProducto() {
@@ -66,7 +71,7 @@ function buscarProducto() {
 
     if (productosEncontrados.length === 0) {
         AgregarCards("<h1>Tu busqueda no arrojo ningun resultado :(</h1>")
-        if (productosEncontrados2.length === 0){
+        if (productosEncontrados2.length === 0) {
             AgregarCards("<h1>Tu busqueda no arrojo ningun resultado :(</h1>")
         } else {
             crearCards(productosEncontrados2);
@@ -74,14 +79,13 @@ function buscarProducto() {
     } else {
         crearCards(productosEncontrados);
     }
-    console.log(productosEncontrados2);
 }
 
 function verMas(id) {
     let productoAMostrar = productosEnStorage[id - 1];
     localStorage.setItem("productoAMostrar", JSON.stringify(productoAMostrar));
-    let productoAMostrarDelStorage = JSON.parse(localStorage.getItem("productoAMostrar"))
-    location.href = "../producto.html";
+    // let productoAMostrarDelStorage = JSON.parse(localStorage.getItem("productoAMostrar"))
+    location.href = "./productoDetalle.html";
 }
 
 function obtenerValorInput(elemento) {
@@ -95,7 +99,6 @@ function cargarCantidadAlCarrito(elemento) {
 
 function agregarAlCarrito(nombreProducto) {
     let producto = productos.find((producto) => producto.titulo === nombreProducto);
-    let indiceDelProducto = carritoDeCompras.findIndex((producto) => producto.titulo === nombreProducto);
     let valor = 0;
     valor = Number(obtenerValorInput(`cantidad-${producto.id}`));
     let elemento = carritoDeCompras.some((elemento) => elemento.titulo === nombreProducto);
@@ -221,6 +224,5 @@ function agregandoTotalAlCarrito(cards) {
 function totalCarrito() {
     total = 0;
     let totalDeCompra = calculoDeltotalCarrito();
-    let totalAPagar = descuento(totalDeCompra);
-    agregandoTotalAlCarrito(`TOTAL A PAGAR = ${totalAPagar} USD`);
+    agregandoTotalAlCarrito(`TOTAL A PAGAR = ${totalDeCompra} USD`);
 }
